@@ -36,17 +36,9 @@ def spawn_wave(w):
     enemies.clear()
     if w == 1:
         for _ in range(10):
-            enemies.append({
-                "actor": Actor("enemy", (random.randint(650, 980), random.randint(80, 520))),
-                "hp": 3,
-                "boss": False
-            })
+            enemies.append({d"actor": Actor("enemy", (random.randint(650, 980), random.randint(80, 520))),"hp": 3,"boss": False})
     if w == 2:
-        enemies.append({
-            "actor": Actor("enemy", (850, 300)),
-            "hp": 100,
-            "boss": True
-        })
+        enemies.append({"actor": Actor("enemy", (850, 300)),"hp": 100,"boss": True})
 
 def draw():
     screen.clear()
@@ -62,12 +54,7 @@ def draw():
 
         if show_credits:
             screen.fill("black")
-            screen.draw.text(
-                "Emeği Geçenler\n\nBULUT HEPAĞLAR\nSARI ALİ ŞABAN",
-                center=(WIDTH//2, HEIGHT//2 - 20),
-                fontsize=40,
-                color="white"
-            )
+            screen.draw.text("Emeği Geçenler   BULUT HEPAĞLAR      SARI ALİ ŞABAN",center=(WIDTH//2, HEIGHT//2 - 20),fontsize=40,color="white" )
             screen.draw.filled_rect(back_button, "darkred")
             screen.draw.text("Oyuna Geri Don", center=back_button.center, fontsize=30, color="white")
         return
@@ -206,10 +193,6 @@ def on_mouse_down(pos):
         return
 
     speed = 10
-    bullets.append({
-        "actor": Actor("bullet", (sf.x, sf.y)),
-        "dx": dx / length * speed,
-        "dy": dy / length * speed
-    })
+    bullets.append({"actor": Actor("bullet", (sf.x, sf.y)),"dx": dx / length * speed,"dy": dy / length * speed})
 
 pgzrun.go()
